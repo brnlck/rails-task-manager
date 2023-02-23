@@ -1,0 +1,11 @@
+<h1><%= @task.title %></h1>
+
+<p><strong>Details:</strong> <%= @task.details %></p>
+
+<p>
+  <strong><%= @task.completed ? "This task is Done" : "This task is not done yet" %>
+</p>
+
+<%= link_to "Back to tasks", tasks_path, style: 'text-decoration: none;' %>
+<%= link_to "Edit task", edit_task_path, style: 'text-decoration: none;' %>
+<%= link_to "Delete Task", task_path(@task), data: { turbo_method: 'delete', turbo_confirm: 'Delete task?'}  %>
